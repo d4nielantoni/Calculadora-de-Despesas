@@ -6,8 +6,9 @@ function calcularSaldo() {
     var aguaInput = document.getElementById('agua').value;
     var transporteInput = document.getElementById('transporte').value;
     var alimentacaoInput = document.getElementById('alimentacao').value;
+    var outrosInput = document.getElementById('outros').value;
 
-    if (!nome || !rendaInput || !luzInput || !telefoneInput || !aguaInput || !transporteInput || !alimentacaoInput) {
+    if (!nome || !rendaInput || !luzInput || !telefoneInput || !aguaInput || !transporteInput || !alimentacaoInput || !outrosInput) {
         alert("Por favor, preencha todos os campos.");
         return;
     }
@@ -18,30 +19,34 @@ function calcularSaldo() {
     var agua = parseFloat(aguaInput);
     var transporte = parseFloat(transporteInput);
     var alimentacao = parseFloat(alimentacaoInput);
+    var outros = parseFloat(outrosInput);
     
-    var totalDespesas = luz + telefone + agua + transporte + alimentacao;
+    var totalDespesas = luz + telefone + agua + transporte + alimentacao + outros;
     var saldoRestante = renda - totalDespesas;
+
+    var saldoRestanteText = saldoRestante.toFixed(2);
 
     var resultado = document.getElementById('resultado');
     resultado.innerHTML = `<p>Olá, ${nome}!</p>
                            <p>Sua renda é de <strong>R$ ${renda.toFixed(2)}</strong>.</p>
                            <p>Suas despesas totais são de <strong>R$ ${totalDespesas.toFixed(2)}</strong>.</p>
-                           <p>Seu saldo restante é de <strong> R$ ${saldoRestante.toFixed(2)}</strong>.</p>`;
+                           <p>Seu saldo restante é de <strong> R$ <span id="saldo" style="color: ${saldoRestante < 0 ? 'red' : 'green'}">${saldoRestanteText}</span></strong>.</p>`;
 
     var ctx = document.getElementById('graficoBarras').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Luz', 'Água', 'Telefone', 'Transporte', 'Alimentação'],
+            labels: ['Luz', 'Água', 'Telefone', 'Transporte', 'Alimentação', 'Outros'],
             datasets: [{
                 label: 'Gastos',
-                data: [luz, agua, telefone, transporte, alimentacao],
+                data: [luz, agua, telefone, transporte, alimentacao, outros],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -49,6 +54,7 @@ function calcularSaldo() {
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -74,16 +80,17 @@ function calcularSaldo() {
     var myPieChart = new Chart(ctx2, {
         type: 'pie',
         data: {
-            labels: ['Luz', 'Água', 'Telefone', 'Transporte', 'Alimentação'],
+            labels: ['Luz', 'Água', 'Telefone', 'Transporte', 'Alimentação', 'Outros'],
             datasets: [{
                 label: 'Gastos',
-                data: [luz, agua, telefone, transporte, alimentacao],
+                data: [luz, agua, telefone, transporte, alimentacao, outros],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
                     'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
                     'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -91,6 +98,7 @@ function calcularSaldo() {
                     'rgba(255, 206, 86, 1)',
                     'rgba(75, 192, 192, 1)',
                     'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
                 ],
                 borderWidth: 1
             }]
@@ -107,5 +115,4 @@ function calcularSaldo() {
 
 function limparCampos() {
     window.location.reload();
-   
 }
