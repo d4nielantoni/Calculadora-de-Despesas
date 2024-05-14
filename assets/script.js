@@ -23,10 +23,10 @@ function calcularSaldo() {
     var saldoRestante = renda - totalDespesas;
 
     var resultado = document.getElementById('resultado');
-    resultado.innerHTML = `<p style="font-family: Arial, sans-serif;">Olá, ${nome}!</p>
-                           <p style="font-family: Arial, sans-serif;">Sua renda é de R$ ${renda.toFixed(2)}.</p>
-                           <p style="font-family: Arial, sans-serif;">Suas despesas totais são de R$ ${totalDespesas.toFixed(2)}.</p>
-                           <p style="font-family: Arial, sans-serif;">Seu saldo restante é de R$ ${saldoRestante.toFixed(2)}.</p>`;
+    resultado.innerHTML = `<p>Olá, ${nome}!</p>
+                           <p>Sua renda é de <strong>R$ ${renda.toFixed(2)}</strong>.</p>
+                           <p>Suas despesas totais são de <strong>R$ ${totalDespesas.toFixed(2)}</strong>.</p>
+                           <p>Seu saldo restante é de <strong> R$ ${saldoRestante.toFixed(2)}</strong>.</p>`;
 
     var ctx = document.getElementById('graficoBarras').getContext('2d');
     var myChart = new Chart(ctx, {
@@ -103,4 +103,9 @@ function calcularSaldo() {
             }
         }
     });
+}
+
+function limparCampos() {
+    window.location.reload();
+   
 }

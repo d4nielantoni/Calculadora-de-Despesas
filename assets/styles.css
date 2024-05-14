@@ -1,3 +1,6 @@
+*{
+  font-family: Arial, sans-serif;
+}
 .container {
   max-width: 400px;
   margin: 0 auto;
@@ -5,16 +8,21 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
+h1{
+  text-align: center;
+  padding: 20px;
+}
 label {
-  display: block;
+  display: flex;
   margin-bottom: 5px;
 }
 
+input[type="text"],
 input[type="number"] {
-  width: 100%;
+  width: calc(100% - 10px);
   padding: 5px;
   margin-bottom: 10px;
+  box-sizing: border-box; 
 }
 
 button {
@@ -30,50 +38,64 @@ button:hover {
   background-color: #0056b3;
 }
 
+.botao-limpar{
+background-color: rgba(255, 48, 48, 0.79);
+}
+
+.botao-limpar:hover{
+background-color: rgba(80, 1, 1, 0.75);
+}
+
 #resultado {
   margin-top: 20px;
 }
-
+.graficos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  height: 300px; 
+  margin-top: 20px; 
+}
+#graficoBarras,
 #graficoPizza {
-  width: 200px;
-  height: 200px;
-}
-
-.container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.grafico-container {
   margin-top: 20px;
+  width: 70%;
+  height: 100px;
 }
 
-#graficoBarras {
-  margin: 50px;
-  width: 10px;
-  height: 10px; 
+
+.cadastro, .despesas {
+  width: 100%;
 }
 
-#graficoPizza {
-  margin: 50px;
-  width: 10px;
-  height:10px;
+@media screen and (min-width: 600px) {
+  .cadastro, .despesas {
+    width: 100%; 
+    margin-right: 4%; 
+  }
 }
 
 @media screen and (max-width: 600px) {
   .container {
-      max-width: 300px;
+    max-width: 300px;
   }
 
-  .grafico-container {
-      margin-top: 10px;
+  .cadastro, .despesas {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 
   #graficoBarras,
   #graficoPizza {
-      height: 200px;
+    height: 100px;
+    margin: 30px;
+  }
+  .graficos{
+    margin-top: 170px;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
   }
 }
