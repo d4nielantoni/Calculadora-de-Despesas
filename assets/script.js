@@ -18,7 +18,7 @@ function calcularSaldo() {
     var agua = parseFloat(aguaInput);
     var transporte = parseFloat(transporteInput);
     var alimentacao = parseFloat(alimentacaoInput);
-
+    
     var totalDespesas = luz + telefone + agua + transporte + alimentacao;
     var saldoRestante = renda - totalDespesas;
 
