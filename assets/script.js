@@ -7,7 +7,6 @@ function calcularSaldo() {
     var transporteInput = document.getElementById('transporte').value;
     var alimentacaoInput = document.getElementById('alimentacao').value;
 
-    // Verificando se algum campo está vazio
     if (!nome || !rendaInput || !luzInput || !telefoneInput || !aguaInput || !transporteInput || !alimentacaoInput) {
         alert("Por favor, preencha todos os campos.");
         return;
@@ -29,7 +28,6 @@ function calcularSaldo() {
                            <p style="font-family: Arial, sans-serif;">Suas despesas totais são de R$ ${totalDespesas.toFixed(2)}.</p>
                            <p style="font-family: Arial, sans-serif;">Seu saldo restante é de R$ ${saldoRestante.toFixed(2)}.</p>`;
 
-    // Criando gráfico de gastos em barras
     var ctx = document.getElementById('graficoBarras').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -72,7 +70,6 @@ function calcularSaldo() {
         }
     });
 
-    // Criando gráfico de gastos em pizza
     var ctx2 = document.getElementById('graficoPizza').getContext('2d');
     var myPieChart = new Chart(ctx2, {
         type: 'pie',

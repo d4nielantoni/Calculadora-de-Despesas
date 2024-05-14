@@ -38,7 +38,7 @@ button:hover {
   width: 200px;
   height: 200px;
 }
-/* Estilos para a classe container */
+
 .container {
   max-width: 400px;
   margin: 0 auto;
@@ -47,36 +47,33 @@ button:hover {
   border-radius: 5px;
 }
 
-/* Estilos para os gráficos */
 .grafico-container {
   margin-top: 20px;
 }
 
-/* Estilos para o gráfico de barras */
 #graficoBarras {
-  width: 100%;
-  height: 300px; /* Altura padrão */
+  margin: 50px;
+  width: 10px;
+  height: 10px; 
 }
 
-/* Estilos para o gráfico de pizza */
 #graficoPizza {
-  width: 100%;
-  height: 300px; /* Altura padrão */
+  margin: 50px;
+  width: 10px;
+  height:10px;
 }
 
-/* Estilos para responsividade usando media screen */
 @media screen and (max-width: 600px) {
   .container {
       max-width: 300px;
   }
 
-  /* Reduza a altura dos gráficos para telas menores */
   .grafico-container {
       margin-top: 10px;
   }
 
   #graficoBarras,
   #graficoPizza {
-      height: 200px; /* Altura reduzida para telas menores */
+      height: 200px;
   }
 }
