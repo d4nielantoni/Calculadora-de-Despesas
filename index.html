@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pessoa</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+    
+  <div class="container">
+    <h1>Calculadora Despesas</h1>
+    <h2>Cadastro</h2>
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome">
+    </div>
+    <div>
+      <label for="renda">Renda:</label>
+      <input type="number" id="renda">
+    </div>
+    <div>
+      <h3>Despesas</h3>
+      <label for="luz">Luz:</label>
+      <input type="number" id="luz">
+      <label for="agua">Água:</label>
+      <input type="number" id="agua">
+      <label for="telefone">Telefone:</label>
+      <input type="number" id="telefone">
+      <label for="transporte">Transporte:</label>
+      <input type="number" id="transporte">
+      <label for="alimentacao">Alimentação:</label>
+      <input type="number" id="alimentacao">
+    </div>
+    <button onclick="calcularSaldo()">Calcular</button>
+    <div id="resultado"></div>
+  </div>
+  <canvas id="graficoBarras"></canvas>
+  <canvas id="graficoPizza"></canvas>
+
+  <script src="./assets/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
