@@ -1,4 +1,4 @@
-# Calculadora de Renda
+# Gastômetro
 
 Esta é uma aplicação simples para calcular despesas e renda pessoal. Com base nas informações fornecidas pelo usuário, a calculadora apresenta o saldo restante após deduzir as despesas. Além disso, exibe gráficos de barras e pizza para visualizar os gastos em diferentes categorias.
 
@@ -52,13 +52,10 @@ campos de entrada, verifica se todos os campos estão preenchidos, converte esse
 das despesas e o saldo restante, exibe os resultados na página e cria gráficos de barras e pizza para visualizar os gastos 
 em diferentes categorias.
 
+---
+
 - **Função limparCampos()**: é acionada quando o botão "Limpar" é clicado. Ela simplesmente recarrega a página para limpar 
 todos os campos e permitir que o usuário comece um novo cálculo.
 
 ---
 
-## Autor
-
-Este projeto foi desenvolvido por [Seu Nome/Aplicação] como parte de [insira aqui o propósito ou contexto do projeto, se aplicável].
-
----
